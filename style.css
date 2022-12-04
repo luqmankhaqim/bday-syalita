@@ -1,0 +1,414 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 200px 200px;
+    width: 100px;
+    border-radius: 0.5rem;
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+   
+   margin-top: -200px;
+   margin-left: -100px;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.printer-animation,.printer{
+    position:relative;
+    top: -35px;
+    right: -25px;
+}
+
+input#button{
+    display: none;
+}
+
+.top{
+    position: absolute ;
+    background-color:#282c30;
+    width: 200px;
+    height: 70px;
+    border-radius: 20px 20px 0 0 ;
+    border: 5px solid black;
+    transform: translate(-50%,-50%);
+    left:-1px ;
+    top: 50%;
+    box-shadow: inset 20px 0 #1e2124 ;
+    z-index:-1;
+
+}
+
+.middle {
+    position: absolute;
+    background-color: #4a4f55; 
+    border: 5px solid black;
+    width:250px;
+    height:100px;
+    border-radius: 20px ;
+    top: 30px;
+    left: -130px;
+    z-index:5 ;
+    box-shadow: inset 20px 0 #373b3d ;
+
+}
+
+.trace,.trace::before {
+    position: absolute;
+    background-color:#282c30 ;
+}
+
+.trace {
+    border:5px solid black ;
+    width: 160px ;
+    height:80px ;
+    border-radius: 10px ;
+    left:-85px;
+    top: 110px; 
+    box-shadow: inset 0 35px #1e2124 ;
+    z-index: 2;
+
+}
+
+.trace::before {
+    content:"";
+    width:60px;
+    height:20px;
+    border-radius:0 0 10px 10px;
+    top: 80px;
+    left:45px;
+    border-bottom:5px solid black ;
+    border-right: 5px solid black ;
+    border-left: 5px solid black ;
+}
+
+.trace::after {
+    position: absolute ;
+    content: "";
+    width: 5px ;
+    height: 50px ;
+    background-color: black;
+    left :20px;
+    top:15px;
+    box-shadow:60px 0 black, 115px 0 black ;
+}
+
+.paper {
+    position: absolute;
+    border: 5px solid black ;
+    background-color: white ;
+    width: 120px;
+    height: 140px;
+    top: -70px;
+    left: -65px ;
+    z-index: 3;
+}
+.bebek {
+    position: absolute;
+    border: 5px solid black ;
+    background-color:transparent ;
+    width: 120px;
+    height: 140px;
+    top: -70px;
+    left: -65px ;
+    z-index: 3;
+}
+.ikan {
+    position: absolute;
+    border: 5px solid black ;
+    background-color:transparent ;
+    width: 120px;
+    height: 140px;
+    top: -70px;
+    left: -65px ;
+    z-index: 3;
+}
+
+.button {
+    position: absolute;
+    z-index: 30;
+    border-radius: 50% ;
+    border: 5px solid black;
+    background-color: #Fd5e49 ;
+    width: 15px;
+    height: 15px;
+    left: 90px ;
+    cursor: pointer ;
+    top: 45px;
+    animation: pulse 1.5s infinite;
+}
+
+.button:active{
+    background-color: #52dc97;
+}
+
+@keyframes pulse {
+    0%{transform: scale(.9) ;}
+    70%{transform: scale(1) ;
+    box-shadow: 0 0 0 3px;}
+    100%{transform: scale(.9) ;
+    box-shadow: 0 0 0 0;}
+}
+
+
+.paper::before{
+    content: "HBD Paw " ;
+    position: absolute;
+    font-family:Arial ;
+    text-align: center;
+    top:10px ;
+    left: 25px;
+    transform: scaleY(-1) ;
+    opacity: 0  ;
+  }
+  .bebek::before {
+    content: " susah banget ngejelasin  gmn perasaanku skrng. ak seneng banget bisa ketemu orang yang baik dan bisa dengerin semua ceritaku. semoga wish kamu di ultah kali ini bisa kesampaian ya. jangan lupa jaga kesehatann ya sayang. I'm glad to meet you that time. big love for u " ;
+    position: absolute;
+    font-family:Arial ;
+    font-size: 5pt;
+    text-align: justify;
+    top:40px ;
+    left: 5px;
+    right: 5px;
+    transform: scaleY(-1) ;
+    opacity: 0  ;
+  }
+  .ikan::before{
+    content: "Luqman <3" ;
+    position: absolute;
+    font-family:Arial ;
+    text-align: right;
+    font-size: 5pt;
+    top:110px ;
+    left: 80px;
+    transform: scaleY(-1) ;
+    opacity: 0  ;
+  }
+
+@keyframes print {
+    0% { transform: translateY(0); z-index: 3;}
+    50% { transform: translateY(200px); z-index: 3;}
+    79% { transform: translateY(200px); z-index: 3;}
+    90% { transform: translateY(200px) rotateX(-90deg); z-index: 3;}
+    95% { transform: translateY(50px)scale(2); z-index: 50;}
+    100% { transform: translateY(50px)scale(2); z-index: 50;}
+}
+
+input#button:checked ~ .paper{
+    animation: print 2.2s linear forwards;
+}
+input#button:checked ~ .bebek{
+    animation: print 2.2s linear forwards;
+}
+
+input#button:checked ~ .ikan{
+    animation: print 2.2s linear forwards;
+}
+
+@keyframes display {
+    0% {opacity:0; transform: scaleY(-1) ;}
+    28% {opacity:0; transform: scaleY(-1) ;}
+    40% {opacity:1; transform: scaleY(-1) ;}
+    80% {opacity:1; transform: scaleY(-1) ;}
+    95% {opacity:1; transform: scaleY(1) ;}
+    100% {opacity:1; transform: scaleY(1) ;}
+
+
+
+}
+
+input#button:checked ~ .paper::before{
+    animation: display 2.2s linear forwards;
+}
+input#button:checked ~ .bebek::before{
+    animation: display 2.2s linear forwards;
+}
+
+input#button:checked ~ .ikan::before{
+    animation: display 2.2s linear forwards;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.col-1{
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+}
+
+
+
+.col-1 p {
+    margin: 20px 0;
+    color: #b7b7b7;
+    font-size: 20px;
+    font-weight: 100 ;
+}
+
+button {
+    width: 200px;
+    border: 0;
+    padding: 12px 10px;
+    outline: none;
+    color: #fff;
+    border-radius: 6px;
+    background: linear-gradient(to right, #fb5283,#ff3527);
+    transition:width 1.5s;
+
+}
+
+button:hover {
+    width: 210px;
+    display: flex;
+    align-items: center;
+}
+.confetti {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    overflow: hidden;
+  }
+  
+  .squareOne, .squareTwo, .squareThree, .squareFour, .squareFive, .squareSix, .squareSeven, .squareEight, .squareNine, .squareTen {
+    position: absolute;
+    width: 10px;
+    height: 25px;
+    top:-110px;
+  }
+  
+  .squareOne {
+    background-color: #ef476f;
+    animation: down 2.5s linear infinite;
+    left:50px;
+  }
+  
+  .squareTwo {
+    background-color: #06d6a0;
+    animation: down 2.3s linear infinite .2s;
+    left:150px;
+  }
+  
+  .squareThree {
+    background-color: #118ab2;
+    animation: down 2.4s linear infinite .4s;
+    left:250px;
+  }
+  
+  .squareFour {
+    background-color: #ffbe0b;
+    animation: down 2.7s linear infinite .1s;
+    left:300px;
+  }
+  
+  .squareFive {
+    background-color: #118ab2;
+    animation: down 2.6s linear infinite .7s;
+    left:5px;
+  }
+  
+  @keyframes down {
+    0% {top:-110px; transform: rotate(0deg) rotateY(-90deg);opacity:1;}
+    100% {top:400px; transform: rotate(360deg) rotateY(180deg);opacity:0.5;}
+  }
+  
+  @keyframes downTwo {
+    0% {top:-130px; transform: rotate(0deg) rotateY(90deg);opacity:1;}
+    100% {top:400px; transform: rotate(-360deg) rotateY(-180deg);opacity:0.5;}
+  }
+  
+  
+  .squareSix {
+    background-color: #ffbe0b;
+    animation: downTwo 2.4s linear infinite .2s;
+    left:70px;
+  }
+  
+  .squareSeven {
+    background-color: #ef476f;
+    animation: downTwo 2.1s linear infinite .7s;
+    left:170px;
+  }
+  
+  .squareEight {
+    background-color: #ef476f;
+    animation: downTwo 2.4s linear infinite .9s;
+    left:280px;
+  }
+  
+  .squareNine {
+    background-color: #06d6a0;
+    animation: downTwo 2.9s linear infinite .9s;
+    left:50px;
+  }
+  
+  .squareTen {
+    background-color: #118ab2;
+    animation: downTwo 2.2s linear infinite 1.1s;
+    left:350px;
+  }
+
+

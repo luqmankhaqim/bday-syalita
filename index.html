@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HABEDE SAYANG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="confetti">
+            <div class="squareOne"></div>
+            <div class="squareTwo"></div>
+            <div class="squareThree"></div>
+            <div class="squareFour"></div>
+            <div class="squareFive"></div>
+            <div class="squareSix"></div>
+            <div class="squareSeven"></div>
+            <div class="squareEight"></div>
+            <div class="squareNine"></div>
+            <div class="squareTen"></div>
+          </div>
+        
+        <div class="navbar">
+            <h2 class="logo">Happy Birthday.</h2>
+            
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <h2> Happy Birthday Syalita.</h2>
+                <p>landing page ini diciptakan oleh anak elektronika yang sosoan ngoding. yang kamu lihat sekarang adalah hasil belajar kuu. so don't judge me ok ?<p>
+               
+    <button class="trigger">Pencet dong kak!</button>
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div class="printer-animation " id="printer-animation">
+            <div class="printer box">
+                <input type="checkbox" id="button">
+                <label for="button" class="button"></label>
+                <div class="top"></div>
+                <div class="middle"></div>
+                <div class="trace"></div>
+                <div class="paper"></div>
+                <div class="bebek"></div>
+                <div class="ikan"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+
+<script>
+    
+    const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
+
+    
+    
+    
+    </script>
+</html>
